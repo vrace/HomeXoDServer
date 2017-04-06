@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="Common.h" />
+    <ClInclude Include="Network\HomeXoDServer.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\WSAInit.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Delegates\MediaDelegate.h">
+      <Filter>Delegates</Filter>
+    </ClInclude>
+    <ClInclude Include="Delegates\ApplicationDelegate.h">
+      <Filter>Delegates</Filter>
+    </ClInclude>
+    <ClInclude Include="Controllers\MediaController.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\Media.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Network">
+      <UniqueIdentifier>{9962548b-0bb6-4d3f-be45-7feacae19527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controllers">
+      <UniqueIdentifier>{ac32bb9a-e367-49c9-80b8-6946e8c5277a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Delegates">
+      <UniqueIdentifier>{558ca5d0-8c50-4f21-9e6e-126ab6ab9e93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{37e439d1-9149-49ff-90e9-041fb734d8be}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Network\HomeXoDServer.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\WSAInit.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Delegates\MediaDelegate.cpp">
+      <Filter>Delegates</Filter>
+    </ClCompile>
+    <ClCompile Include="Delegates\ApplicationDelegate.cpp">
+      <Filter>Delegates</Filter>
+    </ClCompile>
+    <ClCompile Include="Controllers\MediaController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="Models\Media.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
