@@ -1,24 +1,17 @@
 #ifndef MEDIA_CONTROLLER_H
 #define MEDIA_CONTROLLER_H
 
-#include "../Common.h"
 #include "../Delegates/MediaDelegate.h"
+#include "../Models/Media.h"
 
-class MediaController : public MediaDelegate
+typedef struct MediaController
 {
-public:
-	MediaController();
+	MEDIA_DELEGATE base;
+	MEDIA *firstMedia;
+} MEDIA_CONTROLLER;
 
-	virtual const MediaArray& MediaRetrieveList(bool refresh);
-	virtual void MediaStop();
-	virtual bool MediaPlay(int mediaId);
-
-private:
-	void RefreshMediaList();
-
-private:
-	bool _mediaListInitialized;
-	std::vector<Media> _mediaList;
-};
+MEDIA_CONTROLLER* MediaControllerAlloc(void);
+MEDIA_CONTROLLER* MediaControllerInit(MEDIA_CONTROLLER *controller);
+void MediaControllerRelease(MEDIA_CONTROLLER *controller);
 
 #endif

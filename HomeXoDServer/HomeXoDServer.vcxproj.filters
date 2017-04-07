@@ -1,11 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="Common.h" />
     <ClInclude Include="Network\HomeXoDServer.h">
-      <Filter>Network</Filter>
-    </ClInclude>
-    <ClInclude Include="Network\WSAInit.h">
       <Filter>Network</Filter>
     </ClInclude>
     <ClInclude Include="Delegates\MediaDelegate.h">
@@ -36,24 +32,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Network\HomeXoDServer.cpp">
-      <Filter>Network</Filter>
-    </ClCompile>
-    <ClCompile Include="Network\WSAInit.cpp">
-      <Filter>Network</Filter>
-    </ClCompile>
-    <ClCompile Include="Delegates\MediaDelegate.cpp">
-      <Filter>Delegates</Filter>
-    </ClCompile>
-    <ClCompile Include="Delegates\ApplicationDelegate.cpp">
-      <Filter>Delegates</Filter>
-    </ClCompile>
-    <ClCompile Include="Controllers\MediaController.cpp">
-      <Filter>Controllers</Filter>
-    </ClCompile>
-    <ClCompile Include="Models\Media.cpp">
+    <ClCompile Include="Program.c" />
+    <ClCompile Include="Models\Media.c">
       <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\HomeXoDServer.c">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Delegates\MediaDelegate.c">
+      <Filter>Delegates</Filter>
+    </ClCompile>
+    <ClCompile Include="Delegates\ApplicationDelegate.c">
+      <Filter>Delegates</Filter>
+    </ClCompile>
+    <ClCompile Include="Controllers\MediaController.c">
+      <Filter>Controllers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,30 +1,18 @@
 #ifndef HOME_XOD_SERVER_H
 #define HOME_XOD_SERVER_H
 
-#include "../Common.h"
 #include "../Delegates/MediaDelegate.h"
 #include "../Delegates/ApplicationDelegate.h"
 
-class HomeXoDServer
-{
-public:
-	HomeXoDServer();
-	~HomeXoDServer();
+typedef struct HomeXoDServer HOME_XOD_SERVER;
 
-	bool Initialize();
-	void SetMediaDelegate(MediaDelegate *media);
-	void SetApplicationDelegate(ApplicationDelegate *application);
+HOME_XOD_SERVER* ServerAlloc(void);
+HOME_XOD_SERVER* ServerInit(HOME_XOD_SERVER *server);
+void ServerRelease(HOME_XOD_SERVER *server);
 
-	void Run();
+void ServerSetMediaDelegate(HOME_XOD_SERVER *server, MEDIA_DELEGATE *mediaDelegate);
+void ServerSetApplicationDelegate(HOME_XOD_SERVER *server, APPLICATION_DELEGATE *applicationDelegate);
 
-private:
-	HomeXoDServer(const HomeXoDServer&);
-	HomeXoDServer& operator =(const HomeXoDServer&);
-
-private:
-	SOCKET _listenfd;
-	MediaDelegate *_mediaDelegate;
-	ApplicationDelegate *_applicationDelegate;
-};
+void ServerRun(HOME_XOD_SERVER *server);
 
 #endif

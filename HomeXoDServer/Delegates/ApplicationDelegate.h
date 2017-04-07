@@ -1,13 +1,15 @@
 #ifndef APPLICATION_DELEGATE_H
 #define APPLICATION_DELEGATE_H
 
-#include "../Common.h"
+typedef struct ApplicationDelegate APPLICATION_DELEGATE;
 
-class ApplicationDelegate
+typedef void(*APPLICATION_RETRIEVE_LIST)(APPLICATION_DELEGATE*);
+typedef void(*APPLICATION_LAUNCH)(APPLICATION_DELEGATE*, int);
+
+struct ApplicationDelegate
 {
-public:
-	virtual void ApplicationList(bool refresh) = 0;
-	virtual void ApplicationLaunch(int applicationId) = 0;
+	APPLICATION_RETRIEVE_LIST retrieveList;
+	APPLICATION_LAUNCH launch;
 };
 
 #endif
