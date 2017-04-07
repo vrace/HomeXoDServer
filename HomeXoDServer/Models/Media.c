@@ -2,6 +2,11 @@
 #include <string.h>
 #include "Media.h"
 
+MEDIA* MediaAlloc(void)
+{
+	return malloc(sizeof(MEDIA));
+}
+
 MEDIA* MediaInit(MEDIA *media, const char *mediaName)
 {
 	media->id = 0;
@@ -14,5 +19,5 @@ MEDIA* MediaInit(MEDIA *media, const char *mediaName)
 void MediaRelease(MEDIA *media)
 {
 	free(media->name);
-	media->name = NULL;
+	free(media);
 }
