@@ -12,7 +12,7 @@ MEDIA* MediaInit(MEDIA *media, const char *mediaName)
 	// TODO: Generate unique ID
 	media->id = 0;
 	media->next = NULL;
-	media->name = strdup(mediaName);
+	media->name = _strdup(mediaName);
 
 	return media;
 }

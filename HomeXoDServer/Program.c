@@ -16,12 +16,12 @@ int main(void)
 void ApplicationRun(void)
 {
 	HOME_XOD_SERVER *server;
-	MEDIA_DELEGATE *media;
+	MEDIA_CONTROLLER *media;
 
 	server = ServerInit(ServerAlloc());
 	media = MediaControllerInit(MediaControllerAlloc());
 	
-	ServerSetMediaDelegate(server, media);
+	ServerSetMediaDelegate(server, (MEDIA_DELEGATE*)media);
 	ServerRun(server);
 
 	MediaControllerRelease(media);
