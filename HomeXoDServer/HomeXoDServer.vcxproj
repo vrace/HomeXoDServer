@@ -79,6 +79,7 @@
     <ClCompile Include="Controllers\MediaController.c" />
     <ClCompile Include="Delegates\ApplicationDelegate.c" />
     <ClCompile Include="Delegates\MediaDelegate.c" />
+    <ClCompile Include="Models\MediaList.c" />
     <ClCompile Include="Program.c" />
     <ClCompile Include="Models\Media.c" />
     <ClCompile Include="Network\HomeXoDServer.c" />
@@ -88,6 +89,7 @@
     <ClInclude Include="Delegates\ApplicationDelegate.h" />
     <ClInclude Include="Delegates\MediaDelegate.h" />
     <ClInclude Include="Models\Media.h" />
+    <ClInclude Include="Models\MediaList.h" />
     <ClInclude Include="Network\HomeXoDServer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
