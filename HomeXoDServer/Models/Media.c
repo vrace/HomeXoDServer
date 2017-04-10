@@ -19,6 +19,9 @@ MEDIA* MediaInit(MEDIA *media, const char *mediaName)
 
 void MediaRelease(MEDIA *media)
 {
+	if (!media)
+		return;
+
 	free(media->name);
 	free(media);
 }

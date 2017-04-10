@@ -19,6 +19,9 @@ MEDIA_LIST* MediaListInit(MEDIA_LIST *mediaList)
 
 void MediaListRelease(MEDIA_LIST *mediaList)
 {
+	if (!mediaList)
+		return;
+
 	MediaListClear(mediaList);
 	free(mediaList);
 }
