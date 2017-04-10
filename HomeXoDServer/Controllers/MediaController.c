@@ -12,6 +12,14 @@ struct MediaController
 	char *mediaPath;
 };
 
+static MEDIA_LIST* GetMediaList(MEDIA_CONTROLLER *controller)
+{
+	if (!controller->mediaList)
+		controller->mediaList = MediaListInit(MediaListAlloc());
+
+	return controller->mediaList;
+}
+
 static const char* GetMediaPath(MEDIA_CONTROLLER *controller)
 {
 	PWSTR downloadPath;
@@ -41,22 +49,44 @@ static const char* GetMediaPath(MEDIA_CONTROLLER *controller)
 	return controller->mediaPath;
 }
 
+static void EnumMediaFiles(MEDIA_CONTROLLER *controller)
+{
+	HANDLE hf;
+	WIN32_FIND_DATA wfd;
+	char *term;
+	const char *all = "\\*";
+
+	term = malloc(strlen(GetMediaPath(controller)) + strlen(all) + 1);
+	strcpy(term, GetMediaPath(controller));
+	strcat(term, all);
+
+	hf = FindFirstFile(term, &wfd);
+	while (hf != INVALID_HANDLE_VALUE)
+	{
+		// TODO: search into directory
+		// TODO: filter media files
+
+		MEDIA *media = MediaInit(MediaAlloc(), wfd.cFileName);
+		MediaListConcat(GetMediaList(controller), media);
+
+		if (!FindNextFile(hf, &wfd))
+		{
+			FindClose(hf);
+			hf = INVALID_HANDLE_VALUE;
+		}
+	}
+
+	free(term);
+}
+
 static MEDIA_LIST* RefreshMediaList(MEDIA_CONTROLLER *controller)
 {
-	MEDIA_LIST **mediaList = &controller->mediaList;
+	MEDIA_LIST *mediaList = GetMediaList(controller);
 
-	if (!*mediaList)
-		*mediaList = MediaListInit(MediaListAlloc());
+	MediaListClear(mediaList);
+	EnumMediaFiles(controller);
 
-	MediaListClear(*mediaList);
-
-	// Have some fun
-	MediaListConcat(*mediaList, MediaInit(MediaAlloc(), "Something"));
-	MediaListConcat(*mediaList, MediaInit(MediaAlloc(), "For"));
-	MediaListConcat(*mediaList, MediaInit(MediaAlloc(), "Nothing"));
-	MediaListConcat(*mediaList, MediaInit(MediaAlloc(), GetMediaPath(controller)));
-
-	return *mediaList;
+	return mediaList;
 }
 
 static void StopMedia(MEDIA_CONTROLLER *controller)
