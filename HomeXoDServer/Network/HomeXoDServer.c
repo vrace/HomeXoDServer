@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "HomeXoDServer.h"
 
@@ -37,5 +38,18 @@ void ServerSetApplicationDelegate(HOME_XOD_SERVER *server, APPLICATION_DELEGATE 
 
 void ServerRun(HOME_XOD_SERVER *server)
 {
+	// Have some fun
+	
+	if (server->mediaDelegate)
+	{
+		MEDIA *m;
+		MEDIA_LIST *mlist = server->mediaDelegate->retrieveList(server->mediaDelegate);
 
+		m = MediaListGetFirst(mlist);
+		while (m)
+		{
+			printf("%s\n", m->name);
+			m = m->next;
+		}
+	}
 }

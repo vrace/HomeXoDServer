@@ -3,8 +3,8 @@
 
 typedef struct ApplicationDelegate APPLICATION_DELEGATE;
 
-typedef void(*APPLICATION_RETRIEVE_LIST)(APPLICATION_DELEGATE*);
-typedef void(*APPLICATION_LAUNCH)(APPLICATION_DELEGATE*, int);
+typedef void (*APPLICATION_RETRIEVE_LIST)(APPLICATION_DELEGATE*);
+typedef void (*APPLICATION_LAUNCH)(APPLICATION_DELEGATE*, int);
 
 struct ApplicationDelegate
 {
