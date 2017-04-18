@@ -4,6 +4,7 @@
 #include "MediaController.h"
 #include "../Delegates/MediaDelegate.h"
 #include "../Models/MediaList.h"
+#include "../Functions/EnumerateFile.h"
 
 struct MediaController
 {
@@ -11,6 +12,12 @@ struct MediaController
 	MEDIA_LIST *mediaList;
 	char *mediaPath;
 };
+
+typedef struct MediaControllerEnumFilesArgs
+{
+	ENUMERATE_FILE_ARGS base;
+	MEDIA_CONTROLLER *controller;
+} MEDIA_CONTROLLER_ENUM_FILE_ARGS;
 
 static MEDIA_LIST* GetMediaList(MEDIA_CONTROLLER *controller)
 {
@@ -49,34 +56,21 @@ static const char* GetMediaPath(MEDIA_CONTROLLER *controller)
 	return controller->mediaPath;
 }
 
+static void EnumFileProc(MEDIA_CONTROLLER_ENUM_FILE_ARGS *args, const char *pathName)
+{
+	MEDIA *media = MediaInit(MediaAlloc(), pathName);
+	MediaListConcat(GetMediaList(args->controller), media);
+}
+
 static void EnumMediaFiles(MEDIA_CONTROLLER *controller)
 {
-	HANDLE hf;
-	WIN32_FIND_DATA wfd;
-	char *term;
-	const char *all = "\\*";
+	MEDIA_CONTROLLER_ENUM_FILE_ARGS args;
+	
+	args.base.processPathName = (ENUM_FILE_PROC)EnumFileProc;
+	args.controller = controller;
 
-	term = malloc(strlen(GetMediaPath(controller)) + strlen(all) + 1);
-	strcpy(term, GetMediaPath(controller));
-	strcat(term, all);
-
-	hf = FindFirstFile(term, &wfd);
-	while (hf != INVALID_HANDLE_VALUE)
-	{
-		// TODO: search into directory
-		// TODO: filter media files
-
-		MEDIA *media = MediaInit(MediaAlloc(), wfd.cFileName);
-		MediaListConcat(GetMediaList(controller), media);
-
-		if (!FindNextFile(hf, &wfd))
-		{
-			FindClose(hf);
-			hf = INVALID_HANDLE_VALUE;
-		}
-	}
-
-	free(term);
+	MediaListClear(GetMediaList(controller));
+	EnumerateFile(GetMediaPath(controller), (ENUMERATE_FILE_ARGS*)&args);
 }
 
 static MEDIA_LIST* RefreshMediaList(MEDIA_CONTROLLER *controller)

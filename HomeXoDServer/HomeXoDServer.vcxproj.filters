@@ -19,6 +19,9 @@
     <ClInclude Include="Models\MediaList.h">
       <Filter>Models</Filter>
     </ClInclude>
+    <ClInclude Include="Functions\EnumerateFile.h">
+      <Filter>Functions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Network">
@@ -32,6 +35,9 @@
     </Filter>
     <Filter Include="Models">
       <UniqueIdentifier>{37e439d1-9149-49ff-90e9-041fb734d8be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Functions">
+      <UniqueIdentifier>{834bb510-9467-42e6-8add-d13a581d7a0f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +59,9 @@
     </ClCompile>
     <ClCompile Include="Models\MediaList.c">
       <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions\EnumerateFile.c">
+      <Filter>Functions</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
