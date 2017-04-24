@@ -80,6 +80,7 @@
     <ClCompile Include="Delegates\ApplicationDelegate.c" />
     <ClCompile Include="Delegates\MediaDelegate.c" />
     <ClCompile Include="Functions\EnumerateFile.c" />
+    <ClCompile Include="Functions\IsMediaFile.c" />
     <ClCompile Include="Models\MediaList.c" />
     <ClCompile Include="Program.c" />
     <ClCompile Include="Models\Media.c" />
@@ -90,6 +91,7 @@
     <ClInclude Include="Delegates\ApplicationDelegate.h" />
     <ClInclude Include="Delegates\MediaDelegate.h" />
     <ClInclude Include="Functions\EnumerateFile.h" />
+    <ClInclude Include="Functions\IsMediaFile.h" />
     <ClInclude Include="Models\Media.h" />
     <ClInclude Include="Models\MediaList.h" />
     <ClInclude Include="Network\HomeXoDServer.h" />

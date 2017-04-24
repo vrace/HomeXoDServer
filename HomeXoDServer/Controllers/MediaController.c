@@ -5,6 +5,7 @@
 #include "../Delegates/MediaDelegate.h"
 #include "../Models/MediaList.h"
 #include "../Functions/EnumerateFile.h"
+#include "../Functions/IsMediaFile.h"
 
 struct MediaController
 {
@@ -58,8 +59,11 @@ static const char* GetMediaPath(MEDIA_CONTROLLER *controller)
 
 static void EnumFileProc(MEDIA_CONTROLLER_ENUM_FILE_ARGS *args, const char *pathName)
 {
-	MEDIA *media = MediaInit(MediaAlloc(), pathName);
-	MediaListConcat(GetMediaList(args->controller), media);
+	if (IsMediaFile(pathName))
+	{
+		MEDIA *media = MediaInit(MediaAlloc(), pathName);
+		MediaListConcat(GetMediaList(args->controller), media);
+	}
 }
 
 static void EnumMediaFiles(MEDIA_CONTROLLER *controller)
