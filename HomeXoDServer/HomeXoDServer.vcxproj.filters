@@ -1,73 +1,99 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="Network\HomeXoDServer.h">
+    <ClCompile Include="Base\HttpRequest.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\HttpRequestTranslator.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\HttpResponse.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\HttpResponseTranslator.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\HttpStatus.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\RequestMethod.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\RequestURL.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\RestController.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\RestServer.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Program.cpp" />
+    <ClCompile Include="Network\SimpleWinSockServer.cpp">
       <Filter>Network</Filter>
-    </ClInclude>
-    <ClInclude Include="Delegates\MediaDelegate.h">
-      <Filter>Delegates</Filter>
-    </ClInclude>
-    <ClInclude Include="Delegates\ApplicationDelegate.h">
-      <Filter>Delegates</Filter>
-    </ClInclude>
-    <ClInclude Include="Controllers\MediaController.h">
-      <Filter>Controllers</Filter>
-    </ClInclude>
-    <ClInclude Include="Models\Media.h">
-      <Filter>Models</Filter>
-    </ClInclude>
-    <ClInclude Include="Models\MediaList.h">
-      <Filter>Models</Filter>
-    </ClInclude>
-    <ClInclude Include="Functions\EnumerateFile.h">
-      <Filter>Functions</Filter>
-    </ClInclude>
-    <ClInclude Include="Functions\IsMediaFile.h">
-      <Filter>Functions</Filter>
-    </ClInclude>
+    </ClCompile>
+    <ClCompile Include="Controller\VersionController.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Service\VersionService.cpp">
+      <Filter>Service</Filter>
+    </ClCompile>
+    <ClCompile Include="HomeXoDServer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Filter Include="Base">
+      <UniqueIdentifier>{a961b963-3d61-44ea-9deb-b1898ed94b0a}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Network">
-      <UniqueIdentifier>{9962548b-0bb6-4d3f-be45-7feacae19527}</UniqueIdentifier>
+      <UniqueIdentifier>{2e2cf575-c610-4996-98e5-8198aa5e9afc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Controllers">
-      <UniqueIdentifier>{ac32bb9a-e367-49c9-80b8-6946e8c5277a}</UniqueIdentifier>
+    <Filter Include="Controller">
+      <UniqueIdentifier>{cb1c6729-58ef-42bc-a7ed-d16df28d5c76}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Delegates">
-      <UniqueIdentifier>{558ca5d0-8c50-4f21-9e6e-126ab6ab9e93}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Models">
-      <UniqueIdentifier>{37e439d1-9149-49ff-90e9-041fb734d8be}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Functions">
-      <UniqueIdentifier>{834bb510-9467-42e6-8add-d13a581d7a0f}</UniqueIdentifier>
+    <Filter Include="Service">
+      <UniqueIdentifier>{247ee96c-73c7-485a-abe0-1ce7af354caf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Program.c" />
-    <ClCompile Include="Models\Media.c">
-      <Filter>Models</Filter>
-    </ClCompile>
-    <ClCompile Include="Network\HomeXoDServer.c">
+    <ClInclude Include="Base\HttpHeader.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\HttpRequest.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\HttpRequestTranslator.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\HttpResponse.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\HttpResponseTranslator.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\HttpStatus.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\RequestMethod.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\RequestURL.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\RestController.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\RestServer.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\SimpleWinSockServer.h">
       <Filter>Network</Filter>
-    </ClCompile>
-    <ClCompile Include="Delegates\MediaDelegate.c">
-      <Filter>Delegates</Filter>
-    </ClCompile>
-    <ClCompile Include="Delegates\ApplicationDelegate.c">
-      <Filter>Delegates</Filter>
-    </ClCompile>
-    <ClCompile Include="Controllers\MediaController.c">
-      <Filter>Controllers</Filter>
-    </ClCompile>
-    <ClCompile Include="Models\MediaList.c">
-      <Filter>Models</Filter>
-    </ClCompile>
-    <ClCompile Include="Functions\EnumerateFile.c">
-      <Filter>Functions</Filter>
-    </ClCompile>
-    <ClCompile Include="Functions\IsMediaFile.c">
-      <Filter>Functions</Filter>
-    </ClCompile>
+    </ClInclude>
+    <ClInclude Include="Controller\VersionController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Service\VersionService.h">
+      <Filter>Service</Filter>
+    </ClInclude>
+    <ClInclude Include="HomeXoDServer.h" />
   </ItemGroup>
 </Project>

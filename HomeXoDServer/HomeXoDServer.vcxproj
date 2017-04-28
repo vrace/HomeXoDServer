@@ -56,6 +56,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -76,25 +77,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Controllers\MediaController.c" />
-    <ClCompile Include="Delegates\ApplicationDelegate.c" />
-    <ClCompile Include="Delegates\MediaDelegate.c" />
-    <ClCompile Include="Functions\EnumerateFile.c" />
-    <ClCompile Include="Functions\IsMediaFile.c" />
-    <ClCompile Include="Models\MediaList.c" />
-    <ClCompile Include="Program.c" />
-    <ClCompile Include="Models\Media.c" />
-    <ClCompile Include="Network\HomeXoDServer.c" />
+    <ClCompile Include="Base\HttpRequest.cpp" />
+    <ClCompile Include="Base\HttpRequestTranslator.cpp" />
+    <ClCompile Include="Base\HttpResponse.cpp" />
+    <ClCompile Include="Base\HttpResponseTranslator.cpp" />
+    <ClCompile Include="Base\HttpStatus.cpp" />
+    <ClCompile Include="Base\RequestMethod.cpp" />
+    <ClCompile Include="Base\RequestURL.cpp" />
+    <ClCompile Include="Base\RestController.cpp" />
+    <ClCompile Include="Base\RestServer.cpp" />
+    <ClCompile Include="Controller\VersionController.cpp" />
+    <ClCompile Include="HomeXoDServer.cpp" />
+    <ClCompile Include="Network\SimpleWinSockServer.cpp" />
+    <ClCompile Include="Program.cpp" />
+    <ClCompile Include="Service\VersionService.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Controllers\MediaController.h" />
-    <ClInclude Include="Delegates\ApplicationDelegate.h" />
-    <ClInclude Include="Delegates\MediaDelegate.h" />
-    <ClInclude Include="Functions\EnumerateFile.h" />
-    <ClInclude Include="Functions\IsMediaFile.h" />
-    <ClInclude Include="Models\Media.h" />
-    <ClInclude Include="Models\MediaList.h" />
-    <ClInclude Include="Network\HomeXoDServer.h" />
+    <ClInclude Include="Base\HttpHeader.h" />
+    <ClInclude Include="Base\HttpRequest.h" />
+    <ClInclude Include="Base\HttpRequestTranslator.h" />
+    <ClInclude Include="Base\HttpResponse.h" />
+    <ClInclude Include="Base\HttpResponseTranslator.h" />
+    <ClInclude Include="Base\HttpStatus.h" />
+    <ClInclude Include="Base\RequestMethod.h" />
+    <ClInclude Include="Base\RequestURL.h" />
+    <ClInclude Include="Base\RestController.h" />
+    <ClInclude Include="Base\RestServer.h" />
+    <ClInclude Include="Controller\VersionController.h" />
+    <ClInclude Include="HomeXoDServer.h" />
+    <ClInclude Include="Network\SimpleWinSockServer.h" />
+    <ClInclude Include="Service\VersionService.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
