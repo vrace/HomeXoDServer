@@ -1,7 +1,6 @@
 #ifndef VERSION_SERVICE_H
 #define VERSION_SERVICE_H
 
-#include "VersionService.h"
 #include <string>
 
 class VersionService

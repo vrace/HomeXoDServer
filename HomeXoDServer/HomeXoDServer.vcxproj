@@ -77,6 +77,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Base\HttpHeader.cpp" />
     <ClCompile Include="Base\HttpRequest.cpp" />
     <ClCompile Include="Base\HttpRequestTranslator.cpp" />
     <ClCompile Include="Base\HttpResponse.cpp" />
@@ -86,10 +87,13 @@
     <ClCompile Include="Base\RequestURL.cpp" />
     <ClCompile Include="Base\RestController.cpp" />
     <ClCompile Include="Base\RestServer.cpp" />
+    <ClCompile Include="Controller\MediaController.cpp" />
     <ClCompile Include="Controller\VersionController.cpp" />
     <ClCompile Include="HomeXoDServer.cpp" />
+    <ClCompile Include="Model\Media.cpp" />
     <ClCompile Include="Network\SimpleWinSockServer.cpp" />
     <ClCompile Include="Program.cpp" />
+    <ClCompile Include="Service\MediaService.cpp" />
     <ClCompile Include="Service\VersionService.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -103,9 +107,12 @@
     <ClInclude Include="Base\RequestURL.h" />
     <ClInclude Include="Base\RestController.h" />
     <ClInclude Include="Base\RestServer.h" />
+    <ClInclude Include="Controller\MediaController.h" />
     <ClInclude Include="Controller\VersionController.h" />
     <ClInclude Include="HomeXoDServer.h" />
+    <ClInclude Include="Model\Media.h" />
     <ClInclude Include="Network\SimpleWinSockServer.h" />
+    <ClInclude Include="Service\MediaService.h" />
     <ClInclude Include="Service\VersionService.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
