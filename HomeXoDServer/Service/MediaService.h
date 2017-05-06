@@ -12,9 +12,9 @@ public:
 	const std::vector<Media>& GetMediaList();
 
 private:
-	std::string GetMediaPath();
-	void SearchMediaFile(const std::string &path, const std::string &relative, std::vector<std::string> &files);
-	bool IsMediaFile(const std::string &name);
+	std::wstring GetMediaPath();
+	void SearchMediaFile(const std::wstring &path, const std::wstring &relative, std::vector<std::wstring> &files);
+	bool IsMediaFile(const std::wstring &name);
 
 private:
 	std::vector<Media> _mediaList;

@@ -1,4 +1,12 @@
 #include "MediaController.h"
+#include <sstream>
+#include <iostream>
+
+std::ostream& operator <<(std::ostream &s, const Media &media)
+{
+	s << media.GetName();
+	return s;
+}
 
 HttpResponse* MediaController::Dispatch(const HttpRequest &request)
 {
@@ -18,8 +26,10 @@ HttpResponse* MediaController::GetMediaList()
 	const std::vector<Media> &mediaList = _service.GetMediaList();
 
 	HttpHeader header;
-	SetContentType(header, "application/media-list.v1.json");
+	SetContentType(header, "text/plain; charset=utf-8");
 
-	return new HttpResponse(HttpStatus(HTTP_STATUS_OK), header, "");
+	std::stringstream ss;
+	std::copy(mediaList.begin(), mediaList.end(), std::ostream_iterator<Media>(ss, "\r\n"));
+
+	return new HttpResponse(HttpStatus(HTTP_STATUS_OK), header, ss.str());
 }
-
