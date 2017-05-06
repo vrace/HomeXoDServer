@@ -39,6 +39,18 @@
       <Filter>Service</Filter>
     </ClCompile>
     <ClCompile Include="HomeXoDServer.cpp" />
+    <ClCompile Include="Controller\MediaController.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Service\MediaService.cpp">
+      <Filter>Service</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\Media.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\HttpHeader.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -52,6 +64,9 @@
     </Filter>
     <Filter Include="Service">
       <UniqueIdentifier>{247ee96c-73c7-485a-abe0-1ce7af354caf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{c5888dbf-ef6e-4b44-935b-f02e7842ca35}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -95,5 +110,14 @@
       <Filter>Service</Filter>
     </ClInclude>
     <ClInclude Include="HomeXoDServer.h" />
+    <ClInclude Include="Controller\MediaController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Service\MediaService.h">
+      <Filter>Service</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\Media.h">
+      <Filter>Model</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
