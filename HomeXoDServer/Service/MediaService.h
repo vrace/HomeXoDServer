@@ -12,6 +12,11 @@ public:
 	const std::vector<Media>& GetMediaList();
 
 private:
+	std::string GetMediaPath();
+	void SearchMediaFile(const std::string &path, const std::string &relative, std::vector<std::string> &files);
+	bool IsMediaFile(const std::string &name);
+
+private:
 	std::vector<Media> _mediaList;
 };
 
