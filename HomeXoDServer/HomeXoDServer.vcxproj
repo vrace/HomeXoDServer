@@ -95,6 +95,8 @@
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="Service\MediaService.cpp" />
     <ClCompile Include="Service\VersionService.cpp" />
+    <ClCompile Include="SimpleJson\JsonObject.cpp" />
+    <ClCompile Include="SimpleJson\JsonValue.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base\HttpHeader.h" />
@@ -114,6 +116,8 @@
     <ClInclude Include="Network\SimpleWinSockServer.h" />
     <ClInclude Include="Service\MediaService.h" />
     <ClInclude Include="Service\VersionService.h" />
+    <ClInclude Include="SimpleJson\JsonObject.h" />
+    <ClInclude Include="SimpleJson\JsonValue.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

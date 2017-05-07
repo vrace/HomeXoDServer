@@ -51,6 +51,12 @@
     <ClCompile Include="Base\HttpHeader.cpp">
       <Filter>Base</Filter>
     </ClCompile>
+    <ClCompile Include="SimpleJson\JsonObject.cpp">
+      <Filter>SimpleJson</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleJson\JsonValue.cpp">
+      <Filter>SimpleJson</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -67,6 +73,9 @@
     </Filter>
     <Filter Include="Model">
       <UniqueIdentifier>{c5888dbf-ef6e-4b44-935b-f02e7842ca35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SimpleJson">
+      <UniqueIdentifier>{99a72b1a-2ee5-4b11-bdf9-5e61d88ea86b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +127,12 @@
     </ClInclude>
     <ClInclude Include="Model\Media.h">
       <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleJson\JsonObject.h">
+      <Filter>SimpleJson</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleJson\JsonValue.h">
+      <Filter>SimpleJson</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
