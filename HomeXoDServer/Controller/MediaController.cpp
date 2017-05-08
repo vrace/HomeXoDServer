@@ -1,12 +1,7 @@
 #include "MediaController.h"
-#include <sstream>
-#include <iostream>
-
-std::ostream& operator <<(std::ostream &s, const Media &media)
-{
-	s << media.GetName();
-	return s;
-}
+#include "../SimpleJson/JsonObject.h"
+#include "../SimpleJson/JsonArray.h"
+#include "../SimpleJson/JsonString.h"
 
 HttpResponse* MediaController::Dispatch(const HttpRequest &request)
 {
@@ -28,8 +23,14 @@ HttpResponse* MediaController::GetMediaList()
 	HttpHeader header;
 	SetContentType(header, "text/plain; charset=utf-8");
 
-	std::stringstream ss;
-	std::copy(mediaList.begin(), mediaList.end(), std::ostream_iterator<Media>(ss, "\r\n"));
+	JsonObject dataJson;
+	JsonArray *arr = new JsonArray();
+	for (std::vector<Media>::const_iterator it = mediaList.begin(); it != mediaList.end(); ++it)
+	{
+		JsonString *str = new JsonString(it->GetName());
+		arr->push_back(str);
+	}
+	dataJson["media_list"] = arr;
 
-	return new HttpResponse(HttpStatus(HTTP_STATUS_OK), header, ss.str());
+	return new HttpResponse(HttpStatus(HTTP_STATUS_OK), header, dataJson.ToString());
 }

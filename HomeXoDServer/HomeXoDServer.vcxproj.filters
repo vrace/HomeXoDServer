@@ -57,6 +57,12 @@
     <ClCompile Include="SimpleJson\JsonValue.cpp">
       <Filter>SimpleJson</Filter>
     </ClCompile>
+    <ClCompile Include="SimpleJson\JsonString.cpp">
+      <Filter>SimpleJson</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleJson\JsonArray.cpp">
+      <Filter>SimpleJson</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -132,6 +138,12 @@
       <Filter>SimpleJson</Filter>
     </ClInclude>
     <ClInclude Include="SimpleJson\JsonValue.h">
+      <Filter>SimpleJson</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleJson\JsonString.h">
+      <Filter>SimpleJson</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleJson\JsonArray.h">
       <Filter>SimpleJson</Filter>
     </ClInclude>
   </ItemGroup>

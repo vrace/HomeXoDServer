@@ -3,25 +3,19 @@
 
 #include "JsonValue.h"
 #include <map>
-#include <string>
 
-class JsonObject : public JsonValue
+class JsonObject
+	: public JsonValue
+	, public std::map<std::string, JsonValue*>
 {
-public:
-	typedef std::map<std::string, JsonValue*> MapType;
-
 public:
 	JsonObject();
 	virtual ~JsonObject();
-
 	virtual std::string ToString();
 
-	bool ContainsKey(const std::string &key) const;
-	JsonValue* operator [](const std::string &key);
-	void Put(const std::string &key, JsonValue *value);
-
 private:
-	MapType _elements;
+	JsonObject(const JsonObject&);
+	JsonObject& operator =(const JsonObject&);
 };
 
 #endif
