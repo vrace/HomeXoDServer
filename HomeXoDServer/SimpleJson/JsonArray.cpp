@@ -12,13 +12,13 @@ JsonArray::~JsonArray()
 		delete *it;
 }
 
-std::string JsonArray::ToString()
+std::string JsonArray::ToString() const
 {
 	std::stringstream ss;
 
 	ss << "[";
 
-	iterator it = begin();
+	const_iterator it = begin();
 	if (it != end())
 	{
 		ss << (*it)->ToString();

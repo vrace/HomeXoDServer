@@ -99,6 +99,7 @@
     <ClCompile Include="SimpleJson\JsonObject.cpp" />
     <ClCompile Include="SimpleJson\JsonString.cpp" />
     <ClCompile Include="SimpleJson\JsonValue.cpp" />
+    <ClCompile Include="Translator\MediaTranslator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base\HttpHeader.h" />
@@ -122,6 +123,7 @@
     <ClInclude Include="SimpleJson\JsonObject.h" />
     <ClInclude Include="SimpleJson\JsonString.h" />
     <ClInclude Include="SimpleJson\JsonValue.h" />
+    <ClInclude Include="Translator\MediaTranslator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

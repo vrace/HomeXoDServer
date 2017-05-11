@@ -8,9 +8,12 @@ class JsonString : public JsonValue
 public:
 	JsonString();
 	JsonString(const std::string &str);
+	JsonString(const char *str);
 
 	operator const std::string&() const;
-	virtual std::string ToString();
+	virtual std::string ToString() const;
+
+	bool operator < (const JsonString &rhs) const;
 
 private:
 	std::string _str;

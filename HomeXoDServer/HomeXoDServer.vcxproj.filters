@@ -63,6 +63,9 @@
     <ClCompile Include="SimpleJson\JsonArray.cpp">
       <Filter>SimpleJson</Filter>
     </ClCompile>
+    <ClCompile Include="Translator\MediaTranslator.cpp">
+      <Filter>Translator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -82,6 +85,9 @@
     </Filter>
     <Filter Include="SimpleJson">
       <UniqueIdentifier>{99a72b1a-2ee5-4b11-bdf9-5e61d88ea86b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Translator">
+      <UniqueIdentifier>{3928e8bb-9ec9-4e5e-9ee8-6362fb6d1897}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +151,9 @@
     </ClInclude>
     <ClInclude Include="SimpleJson\JsonArray.h">
       <Filter>SimpleJson</Filter>
+    </ClInclude>
+    <ClInclude Include="Translator\MediaTranslator.h">
+      <Filter>Translator</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

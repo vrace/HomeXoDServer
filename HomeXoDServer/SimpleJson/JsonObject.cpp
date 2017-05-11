@@ -12,7 +12,7 @@ JsonObject::~JsonObject()
 		delete it->second;
 }
 
-std::string JsonObject::ToString()
+std::string JsonObject::ToString() const
 {
 	if (empty())
 		return "{}";
@@ -20,13 +20,13 @@ std::string JsonObject::ToString()
 	std::stringstream ss;
 	ss << "{";
 
-	iterator it = begin();
+	const_iterator it = begin();
 	if (it != end())
 	{
-		ss << "\"" << it->first << "\":" << it->second->ToString();
+		ss << it->first.ToString() << ":" << it->second->ToString();
 
 		for (++it; it != end(); ++it)
-			ss << ",\"" << it->first << "\":" << it->second->ToString();
+			ss << it->first.ToString() << ":" << it->second->ToString();
 	}
 
 	ss << "}";

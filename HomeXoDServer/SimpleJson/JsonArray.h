@@ -11,7 +11,7 @@ class JsonArray
 public:
 	JsonArray();
 	virtual ~JsonArray();
-	virtual std::string ToString();
+	virtual std::string ToString() const;
 };
 
 #endif
