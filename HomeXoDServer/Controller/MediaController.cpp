@@ -1,12 +1,5 @@
 #include "MediaController.h"
-#include <sstream>
-#include <iostream>
-
-std::ostream& operator <<(std::ostream &s, const Media &media)
-{
-	s << media.GetName();
-	return s;
-}
+#include "../Translator/MediaTranslator.h"
 
 HttpResponse* MediaController::Dispatch(const HttpRequest &request)
 {
@@ -28,8 +21,9 @@ HttpResponse* MediaController::GetMediaList()
 	HttpHeader header;
 	SetContentType(header, "text/plain; charset=utf-8");
 
-	std::stringstream ss;
-	std::copy(mediaList.begin(), mediaList.end(), std::ostream_iterator<Media>(ss, "\r\n"));
+	JsonObject *dataJson = MediaTranslator::Translate(mediaList);
+	std::string payload = dataJson->ToString();
+	delete dataJson;
 
-	return new HttpResponse(HttpStatus(HTTP_STATUS_OK), header, ss.str());
+	return new HttpResponse(HttpStatus(HTTP_STATUS_OK), header, payload);
 }
