@@ -1,4 +1,5 @@
 #include "MediaController.h"
+#include "../Base/HttpResponseEntity.h"
 #include "../Translator/MediaTranslator.h"
 
 HttpResponse* MediaController::Dispatch(const HttpRequest &request)
@@ -17,13 +18,6 @@ HttpResponse* MediaController::Dispatch(const HttpRequest &request)
 HttpResponse* MediaController::GetMediaList()
 {
 	const std::vector<Media> &mediaList = _service.GetMediaList();
-
-	HttpHeader header;
-	SetContentType(header, "text/plain; charset=utf-8");
-
 	JsonObject *dataJson = MediaTranslator::Translate(mediaList);
-	std::string payload = dataJson->ToString();
-	delete dataJson;
-
-	return new HttpResponse(HttpStatus(HTTP_STATUS_OK), header, payload);
+	return new HttpResponseEntity<JsonObject>(HTTP_STATUS_OK, dataJson);
 }

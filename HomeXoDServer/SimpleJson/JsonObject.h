@@ -13,6 +13,9 @@ public:
 	JsonObject();
 	virtual ~JsonObject();
 	virtual std::string ToString() const;
+	const std::string& GetContentType() const;
+
+	void Put(const std::string &key, const std::string &value);
 
 private:
 	JsonObject(const JsonObject&);

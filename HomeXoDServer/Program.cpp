@@ -1,10 +1,14 @@
 #include "HomeXoDServer.h"
 
+HomeXoDServer theServer;
+
 int main(void)
 {
-	HomeXoDServer server;
-	if (server.Init())
-		server.Run();
+	if (theServer.Init())
+	{
+		theServer.Run();
+		theServer.Shutdown();
+	}
 
 	return 0;
 }

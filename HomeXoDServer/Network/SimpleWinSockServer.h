@@ -14,6 +14,7 @@ public:
 	virtual bool Init();
 	void Run();
 	void Shutdown();
+	void PrepareShutdown();
 
 protected:
 	virtual const std::string& GetServerPort() const;
@@ -33,6 +34,7 @@ private:
 	std::vector<char> _recvbuf;
 	SOCKET _listenfd;
 	WSADATA _wsa;
+	bool _shutdown;
 };
 
 #endif
