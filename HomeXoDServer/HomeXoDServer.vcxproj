@@ -88,13 +88,13 @@
     <ClCompile Include="Base\RestController.cpp" />
     <ClCompile Include="Base\RestServer.cpp" />
     <ClCompile Include="Controller\MediaController.cpp" />
-    <ClCompile Include="Controller\VersionController.cpp" />
+    <ClCompile Include="Controller\SystemController.cpp" />
     <ClCompile Include="HomeXoDServer.cpp" />
     <ClCompile Include="Model\Media.cpp" />
     <ClCompile Include="Network\SimpleWinSockServer.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="Service\MediaService.cpp" />
-    <ClCompile Include="Service\VersionService.cpp" />
+    <ClCompile Include="Service\SystemService.cpp" />
     <ClCompile Include="SimpleJson\JsonArray.cpp" />
     <ClCompile Include="SimpleJson\JsonObject.cpp" />
     <ClCompile Include="SimpleJson\JsonString.cpp" />
@@ -102,6 +102,7 @@
     <ClCompile Include="Translator\MediaTranslator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Base\HttpResponseEntity.h" />
     <ClInclude Include="Base\HttpHeader.h" />
     <ClInclude Include="Base\HttpRequest.h" />
     <ClInclude Include="Base\HttpRequestTranslator.h" />
@@ -113,12 +114,12 @@
     <ClInclude Include="Base\RestController.h" />
     <ClInclude Include="Base\RestServer.h" />
     <ClInclude Include="Controller\MediaController.h" />
-    <ClInclude Include="Controller\VersionController.h" />
+    <ClInclude Include="Controller\SystemController.h" />
     <ClInclude Include="HomeXoDServer.h" />
     <ClInclude Include="Model\Media.h" />
     <ClInclude Include="Network\SimpleWinSockServer.h" />
     <ClInclude Include="Service\MediaService.h" />
-    <ClInclude Include="Service\VersionService.h" />
+    <ClInclude Include="Service\SystemService.h" />
     <ClInclude Include="SimpleJson\JsonArray.h" />
     <ClInclude Include="SimpleJson\JsonObject.h" />
     <ClInclude Include="SimpleJson\JsonString.h" />

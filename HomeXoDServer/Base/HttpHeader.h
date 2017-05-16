@@ -19,4 +19,6 @@ std::string CreateContentType(const std::string &type, const std::string &subtyp
 void SetContentType(HttpHeader &header, const std::string &contentType);
 void SetContentType(HttpHeader &header, const std::string &type, const std::string &subtype);
 
+HttpHeader HttpHeaderWithContentType(const std::string &contentType);
+
 #endif

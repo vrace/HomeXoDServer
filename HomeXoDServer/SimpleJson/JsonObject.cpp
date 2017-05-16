@@ -33,3 +33,14 @@ std::string JsonObject::ToString() const
 
 	return ss.str();
 }
+
+const std::string& JsonObject::GetContentType() const
+{
+	static const std::string contentType = "application/json; charset=utf-8";
+	return contentType;
+}
+
+void JsonObject::Put(const std::string &key, const std::string &value)
+{
+	(*this)[key] = new JsonString(value);
+}

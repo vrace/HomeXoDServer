@@ -24,3 +24,10 @@ void SetContentType(HttpHeader &header, const std::string &type, const std::stri
 {
 	SetContentType(header, CreateContentType(type, subtype));
 }
+
+HttpHeader HttpHeaderWithContentType(const std::string &contentType)
+{
+	HttpHeader header;
+	SetContentType(header, contentType);
+	return header;
+}

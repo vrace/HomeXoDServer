@@ -4,6 +4,7 @@
 
 SimpleWinSockServer::SimpleWinSockServer()
 	: _listenfd(INVALID_SOCKET)
+	, _shutdown(false)
 {
 
 }
@@ -71,9 +72,14 @@ void SimpleWinSockServer::Shutdown()
 	WSACleanup();
 }
 
+void SimpleWinSockServer::PrepareShutdown()
+{
+	_shutdown = true;
+}
+
 void SimpleWinSockServer::Run()
 {
-	while (1)
+	while (!_shutdown)
 	{
 		SOCKET clientfd = accept(_listenfd, NULL, NULL);
 		
