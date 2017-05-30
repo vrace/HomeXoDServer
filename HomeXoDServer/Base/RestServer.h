@@ -4,6 +4,7 @@
 #include "RestController.h"
 #include "HttpRequestTranslator.h"
 #include "HttpResponseTranslator.h"
+#include "AuthenticationManager.h"
 #include <string>
 #include <vector>
 
@@ -13,6 +14,7 @@ public:
     RestServer();
     virtual ~RestServer();
     
+	void SetAuthentication(AuthenticationManager *auth);
     void AddController(RestController *controller);
     std::string Dispatch(const std::string &request);
     
@@ -27,6 +29,7 @@ private:
 private:
     HttpRequestTranslator _requestTranslator;
     HttpResponseTranslator _responseTranslator;
+	AuthenticationManager *_authentication;
     std::vector<RestController*> _controllers;
 };
 

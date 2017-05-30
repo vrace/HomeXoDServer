@@ -77,6 +77,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Base\AuthenticationManager.cpp" />
+    <ClCompile Include="Base\Base64\Base64.cpp" />
+    <ClCompile Include="Base\Base64\Impl\base64_impl.c" />
+    <ClCompile Include="Base\BasicAuthentication\BasicAuthCredential.cpp" />
+    <ClCompile Include="Base\BasicAuthentication\BasicAuthentication.cpp" />
+    <ClCompile Include="Base\BasicAuthentication\BasicAuthRule.cpp" />
+    <ClCompile Include="Base\BasicAuthentication\BasicAuthUser.cpp" />
     <ClCompile Include="Base\HttpHeader.cpp" />
     <ClCompile Include="Base\HttpRequest.cpp" />
     <ClCompile Include="Base\HttpRequestTranslator.cpp" />
@@ -89,6 +96,7 @@
     <ClCompile Include="Base\RestServer.cpp" />
     <ClCompile Include="Controller\MediaController.cpp" />
     <ClCompile Include="Controller\SystemController.cpp" />
+    <ClCompile Include="Controller\SystemControllerAuthentication.cpp" />
     <ClCompile Include="HomeXoDServer.cpp" />
     <ClCompile Include="Model\Media.cpp" />
     <ClCompile Include="Network\SimpleWinSockServer.cpp" />
@@ -102,6 +110,13 @@
     <ClCompile Include="Translator\MediaTranslator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Base\AuthenticationManager.h" />
+    <ClInclude Include="Base\Base64\Base64.h" />
+    <ClInclude Include="Base\Base64\Impl\base64.h" />
+    <ClInclude Include="Base\BasicAuthentication\BasicAuthCredential.h" />
+    <ClInclude Include="Base\BasicAuthentication\BasicAuthentication.h" />
+    <ClInclude Include="Base\BasicAuthentication\BasicAuthRule.h" />
+    <ClInclude Include="Base\BasicAuthentication\BasicAuthUser.h" />
     <ClInclude Include="Base\HttpResponseEntity.h" />
     <ClInclude Include="Base\HttpHeader.h" />
     <ClInclude Include="Base\HttpRequest.h" />
@@ -115,6 +130,7 @@
     <ClInclude Include="Base\RestServer.h" />
     <ClInclude Include="Controller\MediaController.h" />
     <ClInclude Include="Controller\SystemController.h" />
+    <ClInclude Include="Controller\SystemControllerAuthentication.h" />
     <ClInclude Include="HomeXoDServer.h" />
     <ClInclude Include="Model\Media.h" />
     <ClInclude Include="Network\SimpleWinSockServer.h" />

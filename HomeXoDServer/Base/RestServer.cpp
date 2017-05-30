@@ -1,6 +1,7 @@
 #include "RestServer.h"
 
 RestServer::RestServer()
+	: _authentication(NULL)
 {
     
 }
@@ -9,6 +10,9 @@ RestServer::~RestServer()
 {
     for (std::vector<RestController*>::iterator it = _controllers.begin(); it != _controllers.end(); ++it)
         delete *it;
+
+	if (_authentication)
+		delete _authentication;
 }
 
 void RestServer::AddController(RestController *controller)
@@ -27,6 +31,9 @@ std::string RestServer::Dispatch(const std::string &request)
     }
     else
     {
+		if (_authentication && !_authentication->Authenticate(*httpRequest))
+			httpResponse = _authentication->UnauthorizedResponse(*httpRequest);
+
         for (std::vector<RestController*>::iterator it = _controllers.begin(); !httpResponse && it != _controllers.end(); ++it)
             httpResponse = (*it)->Dispatch(*httpRequest);
         
@@ -53,4 +60,9 @@ HttpResponse* RestServer::DefaultResponse()
 HttpResponse* RestServer::BadRequest()
 {
     return new HttpResponse(HttpStatus(HTTP_STATUS_BAD_REQEUST));
+}
+
+void RestServer::SetAuthentication(AuthenticationManager *auth)
+{
+	_authentication = auth;
 }
