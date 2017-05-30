@@ -7,6 +7,9 @@ class HomeXoDServer : public SimpleWinSockServer
 {
 public:
 	bool Init();
+
+private:
+	AuthenticationManager* SetupAuthentication();
 };
 
 #endif

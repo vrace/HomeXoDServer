@@ -33,6 +33,10 @@ void HttpStatus::InitReasonPhrase()
         case HTTP_STATUS_NOT_FOUND:
             _phrase = "Not Found";
             break;
+
+		case HTTP_STATUS_UNAUTHORIZED:
+			_phrase = "Unauthorized";
+			break;
             
         case HTTP_STATUS_INTERNAL_SERVER_ERROR:
             _phrase = "Internal Server Error";

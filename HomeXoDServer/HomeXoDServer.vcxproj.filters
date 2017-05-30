@@ -66,6 +66,30 @@
     <ClCompile Include="Service\SystemService.cpp">
       <Filter>Service</Filter>
     </ClCompile>
+    <ClCompile Include="Base\AuthenticationManager.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Base64\Impl\base64_impl.c">
+      <Filter>Base\Base64\Impl</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\Base64\Base64.cpp">
+      <Filter>Base\Base64</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\BasicAuthentication\BasicAuthentication.cpp">
+      <Filter>Base\BasicAuthentication</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\BasicAuthentication\BasicAuthCredential.cpp">
+      <Filter>Base\BasicAuthentication</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\BasicAuthentication\BasicAuthRule.cpp">
+      <Filter>Base\BasicAuthentication</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller\SystemControllerAuthentication.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\BasicAuthentication\BasicAuthUser.cpp">
+      <Filter>Base\BasicAuthentication</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -88,6 +112,15 @@
     </Filter>
     <Filter Include="Translator">
       <UniqueIdentifier>{3928e8bb-9ec9-4e5e-9ee8-6362fb6d1897}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Base64">
+      <UniqueIdentifier>{1cb71f67-ca20-44f8-b488-ba2175a6b0ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Base64\Impl">
+      <UniqueIdentifier>{2e4e0400-d2c7-46f6-8dc8-e14d0d5e63e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\BasicAuthentication">
+      <UniqueIdentifier>{652030e8-614e-4ade-97a8-8e3b88b9924f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +190,30 @@
     </ClInclude>
     <ClInclude Include="Base\HttpResponseEntity.h">
       <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\AuthenticationManager.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Base64\Impl\base64.h">
+      <Filter>Base\Base64\Impl</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Base64\Base64.h">
+      <Filter>Base\Base64</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\BasicAuthentication\BasicAuthentication.h">
+      <Filter>Base\BasicAuthentication</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\BasicAuthentication\BasicAuthCredential.h">
+      <Filter>Base\BasicAuthentication</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\BasicAuthentication\BasicAuthRule.h">
+      <Filter>Base\BasicAuthentication</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller\SystemControllerAuthentication.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\BasicAuthentication\BasicAuthUser.h">
+      <Filter>Base\BasicAuthentication</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
