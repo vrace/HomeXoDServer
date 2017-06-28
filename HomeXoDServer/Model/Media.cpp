@@ -1,4 +1,5 @@
 #include "Media.h"
+#include "../sha256/sha256.h"
 
 Media::Media()
 {
@@ -8,9 +9,5 @@ Media::Media()
 void Media::SetName(const std::string &name)
 {
 	_name = name;
-}
-
-const std::string& Media::GetName() const
-{
-	return _name;
+	_id = SHA256Hex(name);
 }

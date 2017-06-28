@@ -26,7 +26,7 @@ std::string JsonObject::ToString() const
 		ss << it->first.ToString() << ":" << it->second->ToString();
 
 		for (++it; it != end(); ++it)
-			ss << it->first.ToString() << ":" << it->second->ToString();
+			ss << "," << it->first.ToString() << ":" << it->second->ToString();
 	}
 
 	ss << "}";

@@ -103,6 +103,8 @@
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="Service\MediaService.cpp" />
     <ClCompile Include="Service\SystemService.cpp" />
+    <ClCompile Include="sha256\impl\sha256_impl.c" />
+    <ClCompile Include="sha256\sha256.cpp" />
     <ClCompile Include="SimpleJson\JsonArray.cpp" />
     <ClCompile Include="SimpleJson\JsonObject.cpp" />
     <ClCompile Include="SimpleJson\JsonString.cpp" />
@@ -136,6 +138,8 @@
     <ClInclude Include="Network\SimpleWinSockServer.h" />
     <ClInclude Include="Service\MediaService.h" />
     <ClInclude Include="Service\SystemService.h" />
+    <ClInclude Include="sha256\impl\sha256.h" />
+    <ClInclude Include="sha256\sha256.h" />
     <ClInclude Include="SimpleJson\JsonArray.h" />
     <ClInclude Include="SimpleJson\JsonObject.h" />
     <ClInclude Include="SimpleJson\JsonString.h" />

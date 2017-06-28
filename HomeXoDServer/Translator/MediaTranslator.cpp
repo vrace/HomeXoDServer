@@ -7,6 +7,7 @@ JsonObject* MediaTranslator::Translate(const Media &media)
 	JsonObject *data = new JsonObject();
 	JsonObject &dataJson = *data;
 
+	dataJson["id"] = new JsonString(media.GetID());
 	dataJson["name"] = new JsonString(media.GetName());
 
 	return data;
