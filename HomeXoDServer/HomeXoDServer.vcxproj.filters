@@ -90,6 +90,12 @@
     <ClCompile Include="Base\BasicAuthentication\BasicAuthUser.cpp">
       <Filter>Base\BasicAuthentication</Filter>
     </ClCompile>
+    <ClCompile Include="sha256\impl\sha256_impl.c">
+      <Filter>sha256\impl</Filter>
+    </ClCompile>
+    <ClCompile Include="sha256\sha256.cpp">
+      <Filter>sha256</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -121,6 +127,12 @@
     </Filter>
     <Filter Include="Base\BasicAuthentication">
       <UniqueIdentifier>{652030e8-614e-4ade-97a8-8e3b88b9924f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sha256">
+      <UniqueIdentifier>{fe4e9fc0-1e12-44b8-aaf5-629aaa865b02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sha256\impl">
+      <UniqueIdentifier>{a588606b-b779-49ea-9151-fa8e4eb15ba4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -214,6 +226,12 @@
     </ClInclude>
     <ClInclude Include="Base\BasicAuthentication\BasicAuthUser.h">
       <Filter>Base\BasicAuthentication</Filter>
+    </ClInclude>
+    <ClInclude Include="sha256\impl\sha256.h">
+      <Filter>sha256\impl</Filter>
+    </ClInclude>
+    <ClInclude Include="sha256\sha256.h">
+      <Filter>sha256</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
